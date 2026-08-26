@@ -1,6 +1,9 @@
 from Matrix import Matrix
 
 if __name__ == "__main__":
-    A = Matrix([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+    A = Matrix([[1,3],[2,4]])
+    B = Matrix([[1],[1]])
 
-    print(A)
+    x = A * B
+
+    print(x)
