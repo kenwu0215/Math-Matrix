@@ -1,3 +1,6 @@
+from unittest import result
+
+from _testcapi import error
 from fractions import Fraction
 
 
@@ -150,5 +153,32 @@ class Matrix:
             for row in matrix
         ]
 
+        return reslut
+
+    def __add__(self, other):
+
+        assert self.row == other.row and self.column == other.column, "Matrix syntax error"
+
+        result = []
+
+        for r in range(self.row):
+            row = []
+            for c in range(self.column):
+                row.append(self.data[r][c] + other.data[r][c])
+            result.append(row)
+
         return Matrix(result)
-        
+
+    def __sub__(self, other):
+
+        assert self.row == other.row and self.column == other.column, "Matrix syntax error"
+
+        result = []
+
+        for r in range(self.row):
+            row = []
+            for c in range(self.column):
+                row.append(self.data[r][c] - other.data[r][c])
+            result.append(row)
+
+        return Matrix(result)
