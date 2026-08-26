@@ -1,5 +1,12 @@
 class Matrix:
     def __init__(self, data):
+        
+        if isinstance(data, str):
+            data = [
+                list(map(int, row.split()))
+                for row in data.strip().split("\n")
+            ]
+        
         self.data = data
 
         self.row = len(data)
