@@ -153,11 +153,12 @@ class Matrix:
             for row in matrix
         ]
 
-        return reslut
+        return Matrix(result)
 
     def __add__(self, other):
 
-        assert self.row == other.row and self.column == other.column, "Matrix syntax error"
+        assert self.row == other.row and self.column == other.column\
+            , "Matrix syntax error"
 
         result = []
 
@@ -171,7 +172,8 @@ class Matrix:
 
     def __sub__(self, other):
 
-        assert self.row == other.row and self.column == other.column, "Matrix syntax error"
+        assert self.row == other.row and self.column == other.column,\
+            "Matrix syntax error"
 
         result = []
 
